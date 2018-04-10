@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="person_icon_width">50dp</dimen>
+    <dimen name="person_icon_height">50dp</dimen>
+    <dimen name="person_name_size">15sp</dimen>
+    <dimen name="timestamp_size">10sp</dimen>
+    <dimen name="cardview_margin">5dp</dimen>
+    <dimen name="list_side_margin">20dp</dimen>
+</resources>

@@ -7,13 +7,27 @@
     android:layout_height="match_parent"
     tools:context="com.bhnayak.messageapplication.MainActivity">
 
+    <com.bhnayak.messageapplication.MessageList
+        android:id="@+id/messageList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/list_side_margin"
+        android:paddingStart="@dimen/list_side_margin"
+        android:scrollbars="vertical"/>
+
     <TextView
+        android:id="@+id/noInternet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:paddingEnd="@dimen/list_side_margin"
+        android:paddingStart="@dimen/list_side_margin"
+        android:text="@string/tryAgain"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
 
 </android.support.constraint.ConstraintLayout>

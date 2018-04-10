@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MessageApplication</string>
+    <string name="app_name">Messages</string>
+    <string name="tryAgain">Please check your internet connection. Tap here to try again</string>
 </resources>
