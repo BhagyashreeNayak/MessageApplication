@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MessageListItemHolder extends RecyclerView.ViewHolder {
 
@@ -49,7 +53,16 @@ public class MessageListItemHolder extends RecyclerView.ViewHolder {
         if( message == null )
             return;
         mPersonNameText.setText(message.getPersonName());
-        mTimeStampText.setText(message.getTimeStamp());
+        String timestamp = message.getTimeStamp();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        try {
+            Date date = simpleDateFormat.parse(timestamp);
+            mTimeStampText.setText(DateUtils.getRelativeTimeSpanString(date.getTime(),System.currentTimeMillis(),DateUtils.SECOND_IN_MILLIS));
+        } catch (ParseException e) {
+            e.printStackTrace();
+            mTimeStampText.setText(message.getTimeStamp());
+        }
+
         mMessageContentText.setText(message.getContent());
         String url = URL_PREFIX + message.getImageUrl();
         if( DownloadedImages.getInstance().contains(url))

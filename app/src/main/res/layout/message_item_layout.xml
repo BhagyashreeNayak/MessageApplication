@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_margin="@dimen/cardview_margin"
-        android:elevation="@dimen/cardview_default_elevation"
+        android:elevation="@dimen/card_view_elevation"
         app:cardCornerRadius="@dimen/cardview_default_radius">
         
         <RelativeLayout
@@ -23,14 +23,20 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
+                android:layout_marginStart="@dimen/person_name_margin"
+                android:layout_marginTop="@dimen/person_name_margin"
                 />
             <TextView
                 android:id="@+id/personName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/person_icon"
+                android:layout_marginStart="@dimen/person_name_margin"
+                android:layout_marginEnd="@dimen/person_name_margin"
+                android:layout_marginTop="@dimen/person_name_margin"
                 android:textSize="@dimen/person_name_size"
                 android:textStyle="bold"
+                android:lineSpacingExtra="@dimen/content_linespacing"
                 android:textColor="@android:color/black"/>
             <TextView
                 android:id="@+id/timestamp"
@@ -38,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/person_icon"
                 android:layout_alignStart="@id/personName"
+                android:layout_alignBottom="@id/person_icon"
                 android:layout_below="@id/personName"
                 android:textSize="@dimen/timestamp_size"
                 />
@@ -46,7 +53,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/person_icon"
+                android:layout_marginTop="@dimen/content_top_margin"
+                android:layout_marginBottom="@dimen/content_bottom_margin"
+                android:layout_marginEnd="@dimen/person_name_margin"
                 android:layout_below="@id/person_icon"
+                android:lineSpacingExtra="@dimen/content_linespacing"
                 android:textColor="@android:color/black"/>
         </RelativeLayout>
 

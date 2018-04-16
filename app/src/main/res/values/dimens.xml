@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="person_icon_width">50dp</dimen>
-    <dimen name="person_icon_height">50dp</dimen>
-    <dimen name="person_name_size">15sp</dimen>
-    <dimen name="timestamp_size">10sp</dimen>
+    <dimen name="person_icon_width">40dp</dimen>
+    <dimen name="person_icon_height">40dp</dimen>
+    <dimen name="person_name_size">14sp</dimen>
+    <dimen name="timestamp_size">12sp</dimen>
     <dimen name="cardview_margin">5dp</dimen>
-    <dimen name="list_side_margin">20dp</dimen>
+    <dimen name="list_side_margin">15dp</dimen>
+    <dimen name="action_bar_elevation">3dp</dimen>
+    <dimen name="card_view_elevation">4dp</dimen>
+    <dimen name="person_name_margin">16dp</dimen>
+    <dimen name="content_top_margin">16dp</dimen>
+    <dimen name="content_bottom_margin">20dp</dimen>
+    <dimen name="person_name_bottom_margin">3dp</dimen>
+    <dimen name="timestamp_bottom_padding">3dp</dimen>
+    <dimen name="content_linespacing">6sp</dimen>
 </resources>

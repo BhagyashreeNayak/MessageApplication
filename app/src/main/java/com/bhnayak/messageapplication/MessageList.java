@@ -1,6 +1,7 @@
 package com.bhnayak.messageapplication;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,8 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.AttributeSet;
 
 import java.util.ArrayList;
+
+import static android.support.v7.widget.helper.ItemTouchHelper.ACTION_STATE_SWIPE;
 
 public class MessageList extends RecyclerView {
     private LinearLayoutManager mLayoutManager;
@@ -49,6 +52,16 @@ public class MessageList extends RecyclerView {
         @Override
         public void onSwiped(ViewHolder viewHolder, int direction) {
             mMessageListAdapter.remove( viewHolder.getAdapterPosition() );
+        }
+
+        @Override
+        public void onChildDraw(Canvas c, RecyclerView recyclerView, ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+            if( actionState == ACTION_STATE_SWIPE ) {
+                int totalWidth = viewHolder.itemView.getWidth();
+                float alpha = totalWidth != 0 ? 1 - dX / totalWidth : 1;
+                viewHolder.itemView.setAlpha(alpha);
+            }
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
 
@@ -95,6 +108,6 @@ public class MessageList extends RecyclerView {
     }
 
     private int getThreshold() {
-        return 25;
+        return 20;
     }
 }

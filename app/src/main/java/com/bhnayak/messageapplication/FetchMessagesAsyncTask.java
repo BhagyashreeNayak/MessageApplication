@@ -14,7 +14,7 @@ public class FetchMessagesAsyncTask extends AsyncTask<Void, Void, ArrayList<Mess
     private static final String REQUEST_METHOD = "GET";
     private static final int READ_TIMEOUT = 15000;
     private static final int CONNECTION_TIMEOUT = 15000;
-    private static final String URL = "http://message-list.appspot.com/messages?limit=25&pageToken=";
+    private static final String URL = "http://message-list.appspot.com/messages?limit=10&pageToken=";
     private static String PAGE_TOKEN = "";
     private IFetchMessagesCompletionHandler mCompletionHandler = null;
 
